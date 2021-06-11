@@ -1,0 +1,219 @@
+* {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+  background: radial-gradient(#fff, #C2C1C6 50%);
+}
+
+.clock {
+  height: 25rem;
+  width: 25rem;
+  border-radius: 50%;
+  position: relative;
+  font-size: 2.3rem;
+  background: #C2C1C6;
+  font-weight: 700;
+  background-size: 25rem auto;
+  -webkit-box-shadow: 15px 15px 25px 0px rgba(128, 128, 128, 0.7);
+          box-shadow: 15px 15px 25px 0px rgba(128, 128, 128, 0.7);
+  color: #808080;
+}
+
+.clock .left, .clock .right {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.clock .left {
+  left: 2rem;
+}
+
+.clock .left::before {
+  top: -152%;
+  -webkit-transform: rotate(-60deg);
+          transform: rotate(-60deg);
+  left: 1.8rem;
+}
+
+.clock .left::after {
+  bottom: -152%;
+  -webkit-transform: rotate(60deg);
+          transform: rotate(60deg);
+  left: 1.8rem;
+}
+
+.clock .right {
+  right: 2rem;
+}
+
+.clock .right::before {
+  top: -152%;
+  -webkit-transform: rotate(60deg);
+          transform: rotate(60deg);
+  right: 1.8rem;
+}
+
+.clock .right::after {
+  bottom: -152%;
+  -webkit-transform: rotate(-60deg);
+          transform: rotate(-60deg);
+  right: 1.8rem;
+}
+
+.clock .top, .clock .bottom, .clock .left, .clock .right {
+  overflow: visible;
+}
+
+.clock .top::after, .clock .top::before, .clock .bottom::after, .clock .bottom::before, .clock .left::after, .clock .left::before, .clock .right::after, .clock .right::before {
+  content: '';
+  height: 1rem;
+  width: 3px;
+  background: #808080;
+  display: inline-block;
+  position: absolute;
+  border-radius: 5px;
+}
+
+.clock .top,
+.clock .bottom {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.clock .top {
+  top: 1.5rem;
+}
+
+.clock .top::before {
+  left: -170%;
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
+  bottom: -.1rem;
+}
+
+.clock .top::after {
+  right: -175%;
+  -webkit-transform: rotate(30deg);
+          transform: rotate(30deg);
+  bottom: -.1rem;
+}
+
+.clock .bottom {
+  bottom: 1.5rem;
+}
+
+.clock .bottom::after {
+  right: -390%;
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
+  bottom: 1.9rem;
+}
+
+.clock .bottom::before {
+  left: -390%;
+  -webkit-transform: rotate(30deg);
+          transform: rotate(30deg);
+  bottom: 1.9rem;
+}
+
+.clock .main {
+  height: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-shadow: 15px 15px 15px 0 rgba(128, 128, 128, 0.3) inset;
+          box-shadow: 15px 15px 15px 0 rgba(128, 128, 128, 0.3) inset;
+  border-radius: 50%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.clock .main .center {
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  background-color: #000;
+  z-index: 4;
+}
+
+.clock .main #hour,
+.clock .main #second,
+.clock .main #minuite {
+  position: absolute;
+  bottom: 50%;
+  border-radius: 2rem;
+  -webkit-transition: all .1s;
+  transition: all .1s;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+}
+
+.clock .main #hour {
+  height: 5rem;
+  width: .5rem;
+  background: #DC1758;
+  z-index: 1;
+  border-radius: 100%;
+}
+
+.clock .main #minuite {
+  height: 7rem;
+  width: .3rem;
+  background: #4289D4;
+  z-index: 2;
+  border-radius: 100%;
+}
+
+.clock .main #second {
+  height: 8.7rem;
+  width: .25rem;
+  background: #1D1F1C;
+  z-index: 3;
+  border-radius: 200%;
+}
+
+body.dark .container {
+  background: radial-gradient(#2a2c28, #1D1F1C 60%);
+}
+
+body.dark .clock {
+  -webkit-box-shadow: 15px 15px 25px 0px rgba(0, 0, 0, 0.8);
+          box-shadow: 15px 15px 25px 0px rgba(0, 0, 0, 0.8);
+  background: #1D1F1C;
+}
+
+body.dark .main {
+  -webkit-box-shadow: 15px 15px 15px 0 rgba(0, 0, 0, 0.3) inset;
+          box-shadow: 15px 15px 15px 0 rgba(0, 0, 0, 0.3) inset;
+}
+
+body.dark .main #second {
+  background: #C2C1C6;
+}
+
+body.dark .main .center {
+  background: #C2C1C6;
+}
+/*# sourceMappingURL=main.css.map */
